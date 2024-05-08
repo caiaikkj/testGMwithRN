@@ -102,18 +102,21 @@
         </div>
 
         <!-- Run the game code -->
-        <script type="text/javascript" src="html5game/Match 3 Template.js?cachebust=129914935"></script>
+        <script type="text/javascript" src="html5game/Match 3 Template.js?cachebust=721944760"></script>
 
         <!-- Builtin injector for injecting runner path -->
         
-
-        <script>window.onload = GameMaker_Init;</script>
         <script type="text/javascript">
-                function sendMessageToApp(message) {
-                window.ReactNativeWebView.postMessage(message);
+            function sendMessageToApp(message) {
+                if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
+                    window.ReactNativeWebView.postMessage(message);
+                } else {
+                    console.error("ReactNativeWebView interface is not available.");
                 }
+            }
         </script>
-
+        
+        <script>window.onload = GameMaker_Init;</script>
 
         <!-- Builtin injector for injecting google analytics code -->
         
