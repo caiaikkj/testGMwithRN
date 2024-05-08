@@ -108,6 +108,12 @@
         
 
         <script>window.onload = GameMaker_Init;</script>
+        <script type="text/javascript">
+                function sendMessageToApp(message) {
+                window.ReactNativeWebView.postMessage(message);
+                }
+        </script>
+
 
         <!-- Builtin injector for injecting google analytics code -->
         
